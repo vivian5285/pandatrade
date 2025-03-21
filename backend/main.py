@@ -1,3 +1,9 @@
+import sys
+import os
+
+# 手动添加 PYTHONPATH
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import user
@@ -8,7 +14,6 @@ from risk_manager import RiskManager
 from exchange_manager import ExchangeManager
 from strategy_manager import StrategyManager
 from dotenv import load_dotenv
-import os
 
 # 加载 .env 文件
 load_dotenv()
