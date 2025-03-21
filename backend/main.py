@@ -20,6 +20,9 @@ load_dotenv()
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return {"message": "Hello, Railway!"}
 # 配置 CORS
 app.add_middleware(
     CORSMiddleware,
