@@ -1,0 +1,87 @@
+.container {
+  font-family: Arial, sans-serif;
+  background: #1a1a2e;
+  color: #fff;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #00d4ff;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+.referral, .qrCode, .commission, .rankings {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.linkInput {
+  width: 80%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 5px;
+}
+
+.copyButton {
+  background: #00d4ff;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.copyButton:hover {
+  background: #00a3cc;
+}
+
+.qrCode img {
+  margin-top: 1rem;
+  border: 2px solid #00d4ff;
+  border-radius: 5px;
+}
+
+.withdrawButton {
+  background: #00d4ff;
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.withdrawButton:hover {
+  background: #00a3cc;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th, .table td {
+  border: 1px solid #444;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.table th {
+  background: #0f3460;
+}
+
+.table td {
+  background: #16213e;
+}

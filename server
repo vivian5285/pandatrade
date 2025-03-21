@@ -1,0 +1,21 @@
+server {
+    listen 443 ssl;
+    server_name pandatrade.space;
+
+    ssl_certificate /etc/ssl/certs/pandatrade.crt;
+    ssl_certificate_key /etc/ssl/private/pandatrade.key;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+    }
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:8000;
+    }
+}
+
+server {
+    listen 80;
+    server_name pandatrade.space;
+    return 301 https://$host$request_uri;
+}
