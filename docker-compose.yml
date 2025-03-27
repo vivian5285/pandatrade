@@ -2,31 +2,22 @@ version: '3.8'
 
 services:
   backend:
-    build:
-      context: ./backend
+    build: ./backend
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend/app:/app
     environment:
-      - DATABASE_URL=mongodb://mongo:27017/quant_analysis
+      - DATABASE_URL=postgresql://user:password@db:5432/dbname
     depends_on:
-      - mongo
+      - db
 
-  frontend:
-    build:
-      context: ./frontend
-    ports:
-      - "3000:3000"
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=dbname
     volumes:
-      - ./frontend/src:/app/src
-
-  mongo:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
+      - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  mongo_data: 
+  postgres_data: 
