@@ -27,9 +27,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # 复制应用代码
 COPY ./backend/app /backend/app
-COPY ./backend/alembic.ini /backend/alembic.ini
-COPY ./backend/alembic /backend/alembic
-COPY ./backend/migrations /backend/migrations
 COPY ./backend/.env /backend/.env
 
 # 创建非 root 用户
