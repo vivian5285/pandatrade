@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from models import Strategy
+from .models import Strategy
 from database import db, document_to_dict
 from bson import ObjectId
 
@@ -49,4 +49,9 @@ async def delete_strategy(strategy_id: str):
     result = await db.strategies.delete_one({"_id": ObjectId(strategy_id)})
     if result.deleted_count == 0:
         raise HTTPException(status_code=404, detail="Strategy not found")
-    return {"detail": "Strategy deleted"} 
+    return {"detail": "Strategy deleted"}
+
+@router.get("/strategies")
+async def get_strategies():
+    # 使用 Strategy 模型的代码
+    return {"message": "List of strategies"} 
