@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from .models import Strategy
-from database import db, document_to_dict
+from app.database import db, document_to_dict, connect_to_db
 from bson import ObjectId
 
 router = APIRouter()
@@ -53,5 +53,5 @@ async def delete_strategy(strategy_id: str):
 
 @router.get("/strategies")
 async def get_strategies():
-    # 使用 Strategy 模型的代码
+    # 使用数据库连接的代码
     return {"message": "List of strategies"} 
